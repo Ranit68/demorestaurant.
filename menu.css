@@ -1,0 +1,413 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e8f4f8 100%);
+  color: #333;
+  line-height: 1.6;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+.menu-wrapper {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 100px auto 40px;
+  padding: 0 2rem;
+  transition: all 0.3s ease; /* Smooth transitions for layout changes */
+}
+
+.sidebar {
+  background: white;
+  border-radius: 18px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 120px; /* Stick to top on larger screens */
+  height: fit-content;
+}
+
+.sidebar h3 {
+  margin-bottom: 1rem;
+  color: #d32f2f;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.category {
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+  transition: all 0.3s ease; /* Smooth hover/active transitions */
+  border: 1px solid transparent; /* For better focus states */
+}
+
+.category:hover,
+.category.active {
+  background: #fdecea;
+  color: #d32f2f;
+  transform: translateX(5px); /* Subtle slide effect */
+  box-shadow: 0 4px 12px rgba(211, 47, 47, 0.2);
+}
+
+.category:focus {
+  outline: 2px solid #d32f2f;
+  outline-offset: 2px;
+}
+
+.badge {
+  background: #d32f2f;
+  color: white;
+  font-size: 0.75rem;
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+.main {
+  background: white;
+  border-radius: 18px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  min-height: 60vh; /* Ensure minimum height for better layout */
+}
+
+.search-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  gap: 1rem; /* Add gap for better spacing */
+}
+
+.search-bar h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #d32f2f;
+  font-family: 'Playfair Display', serif; /* Use the fancy font for headings */
+}
+
+.search-bar input {
+  width: 320px;
+  padding: 0.6rem 1rem;
+  border-radius: 30px;
+  border: 1px solid #ddd;
+  outline: none;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-bar input:focus {
+  border-color: #d32f2f;
+  box-shadow: 0 0 8px rgba(211, 47, 47, 0.3);
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.menu-card {
+  border-radius: 16px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.menu-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+.menu-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.menu-card:hover img {
+  transform: scale(1.05); /* Subtle zoom on hover */
+}
+
+.menu-card .content {
+  padding: 1rem;
+}
+
+.menu-card h4 {
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.menu-card p {
+  font-size: 0.85rem;
+  color: #777;
+  margin-bottom: 0.6rem;
+  line-height: 1.4;
+}
+
+.price {
+  font-weight: 600;
+  color: #d32f2f;
+  font-size: 1.1rem;
+}
+
+/* Tablet and smaller desktop adjustments */
+@media (max-width: 1024px) {
+  .menu-wrapper {
+    grid-template-columns: 240px 1fr;
+    gap: 1.5rem;
+    padding: 0 1.5rem;
+  }
+
+  .sidebar {
+    top: 110px;
+  }
+
+  .menu-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
+
+/* Tablet adjustments */
+@media (max-width: 900px) {
+  .menu-wrapper {
+    grid-template-columns: 1fr;
+    margin: 90px auto 30px;
+    padding: 0 1rem;
+  }
+
+  .sidebar {
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    overflow-x: auto;
+    margin-bottom: 1rem;
+    position: static; /* Remove sticky on mobile */
+    scrollbar-width: none; /* Hide scrollbar for better UX */
+    -ms-overflow-style: none; /* IE/Edge */
+  }
+
+  .sidebar::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+  }
+
+  .category {
+    white-space: nowrap;
+    flex-shrink: 0;
+    padding: 0.6rem 1rem;
+    border-radius: 999px;
+    background: #f1f1f1;
+    font-size: 0.9rem;
+    margin-bottom: 0;
+    border: 1px solid #e0e0e0;
+  }
+
+  .category.active {
+    background: #fdecea;
+    color: #d32f2f;
+    border-color: #d32f2f;
+  }
+
+  .main {
+    padding: 1rem;
+  }
+
+  .search-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .search-bar input {
+    width: 100%;
+  }
+
+  .menu-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 1rem;
+  }
+
+  .menu-card img {
+    height: 140px;
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .menu-wrapper {
+    margin-top: 85px;
+    padding: 0 0.5rem;
+  }
+
+  .search-bar h3 {
+    font-size: 1.3rem;
+  }
+
+  .menu-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 0.8rem;
+  }
+
+  .menu-card img {
+    height: 120px;
+  }
+
+  .menu-card .content {
+    padding: 0.8rem;
+  }
+
+  .menu-card h4 {
+    font-size: 0.95rem;
+  }
+
+  .menu-card p {
+    font-size: 0.8rem;
+  }
+
+  .price {
+    font-size: 1rem;
+  }
+}
+
+/* Small mobile adjustments */
+@media (max-width: 480px) {
+  .menu-wrapper {
+    margin-top: 80px;
+  }
+
+  .sidebar {
+    gap: 0.4rem;
+  }
+
+  .category {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.85rem;
+  }
+
+  .main {
+    padding: 0.8rem;
+  }
+
+  .search-bar {
+    gap: 0.5rem;
+  }
+
+  .search-bar h3 {
+    font-size: 1.2rem;
+  }
+
+  .menu-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .menu-card img {
+    height: 130px;
+  }
+
+  .menu-card .content {
+    padding: 1rem;
+  }
+
+  .menu-card h4 {
+    font-size: 1rem;
+  }
+
+  .menu-card p {
+    font-size: 0.85rem;
+  }
+}
+
+/* Extra small screens (e.g., very old phones) */
+@media (max-width: 360px) {
+  .menu-wrapper {
+    padding: 0 0.25rem;
+  }
+
+  .sidebar {
+    gap: 0.3rem;
+  }
+
+  .category {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.8rem;
+  }
+
+  .main {
+    padding: 0.6rem;
+  }
+
+  .menu-card img {
+    height: 110px;
+  }
+
+  .menu-card .content {
+    padding: 0.8rem;
+  }
+}
+
+/* Accessibility and print styles */
+@media print {
+  .menu-wrapper {
+    display: block;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .menu-grid {
+    display: block;
+  }
+
+  .menu-card {
+    break-inside: avoid;
+    margin-bottom: 1rem;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  body {
+    background: white;
+    color: black;
+  }
+
+  .sidebar, .main, .menu-card {
+    border: 1px solid black;
+  }
+
+  .category:hover, .category.active {
+    background: black;
+    color: white;
+  }
+}
+
+/* Reduced motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}

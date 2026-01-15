@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Royal Spice Hotel - Premium Dining Experience</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Experience luxury dining at Royal Spice Hotel with authentic North Indian, South Indian, Italian, and Chinese cuisines. Book your table now.">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="footer.css">
+
+</head>
+
+<body>
+<div id="navbar"></div>
+<link rel="stylesheet" href="navbar.css">
+
+ 
+<!-- Floating Menu Button -->
+<div id="diaryBtn" aria-label="Open Menu Diary">
+  <i class="fas fa-book-open"></i>
+</div>
+
+<!-- Menu Diary Overlay -->
+<div id="diaryOverlay">
+  <div class="book">
+
+    <!-- COVER -->
+    <div class="cover">
+      <div class="emboss">Royal Spice</div>
+      <p>Fine Dining Menu</p>
+      <div class="texture"></div>
+    </div>
+
+    <!-- PAGES -->
+    <div class="pages">
+
+      <!-- PAGE 1 -->
+      <div class="page page-1">
+        <h3>Menu Categories</h3>
+        <button onclick="openPage(1)">North Indian</button>
+        <button onclick="openPage(2)">South Indian</button>
+        <button onclick="openPage(3)">Italian</button>
+        <button onclick="openPage(4)">Chinese</button>
+      </div>
+
+      <!-- PAGE 2 -->
+      <div class="page page-2">
+        <h3>North Indian</h3>
+        <div class="menu-list">
+          <div class="menu-item">
+            <span class="menu-name">Paneer Butter Masala</span>
+            <span class="menu-desc">Creamy paneer in rich tomato gravy.</span>
+            <span class="menu-price">₹220</span>
+          </div>
+          <div class="menu-item">
+            <span class="menu-name">Dal Makhani</span>
+            <span class="menu-desc">Slow-cooked lentils with butter and cream.</span>
+            <span class="menu-price">₹210</span>
+          </div>
+          <div class="menu-item">
+            <span class="menu-name">Butter Naan</span>
+            <span class="menu-desc">Soft, buttery flatbread.</span>
+            <span class="menu-price">₹40</span>
+          </div>
+          <div class="menu-item">
+            <span class="menu-name">Jeera Rice</span>
+            <span class="menu-desc">Fragrant rice with cumin seeds.</span>
+            <span class="menu-price">₹160</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- PAGE 3 -->
+      <div class="page page-3">
+        <h3>South Indian</h3>
+        <div class="menu-list">
+          <div class="menu-item">
+            <span class="menu-name">Masala Dosa</span>
+            <span class="menu-desc">Crispy crepe filled with spiced potato.</span>
+            <span class="menu-price">₹180</span>
+          </div>
+          <div class="menu-item">
+            <span class="menu-name">Idli Sambhar</span>
+            <span class="menu-desc">Steamed rice cakes with lentil soup.</span>
+            <span class="menu-price">₹150</span>
+          </div>
+          <div class="menu-item">
+            <span class="menu-name">Medu Vada</span>
+            <span class="menu-desc">Crispy lentil donuts with chutney.</span>
+            <span class="menu-price">₹80</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- PAGE 4 -->
+      <div class="page page-4">
+        <h3>Italian</h3>
+        <div class="menu-list">
+          <div class="menu-item">
+            <span class="menu-name">Margherita Pizza</span>
+            <span class="menu-desc">Classic tomato, mozzarella, and basil.</span>
+            <span class="menu-price">₹260</span>
+          </div>
+          <div class="menu-item">
+            <span class="menu-name">Pasta Alfredo</span>
+            <span class="menu-desc">Creamy fettuccine with parmesan.</span>
+            <span class="menu-price">₹210</span>
+          </div>
+          <div class="menu-item">
+            <span class="menu-name">Lasagna</span>
+            <span class="menu-desc">Layered pasta with meat sauce.</span>
+            <span class="menu-price">₹280</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- PAGE 5 -->
+      <div class="page page-5">
+        <h3>Chinese</h3>
+        <div class="menu-list">
+          <div class="menu-item">
+            <span class="menu-name">Hakka Noodles</span>
+            <span class="menu-desc">Stir-fried noodles with veggies.</span>
+            <span class="menu-price">₹180</span>
+          </div>
+          <div class="menu-item">
+            <span class="menu-name">Veg Manchurian</span>
+            <span class="menu-desc">Dumplings in spicy sauce.</span>
+            <span class="menu-price">₹190</span>
+          </div>
+          <div class="menu-item">
+            <span class="menu-name">Fried Rice</span>
+            <span class="menu-desc">Wok-tossed rice with vegetables.</span>
+            <span class="menu-price">₹170</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CONTROLS -->
+    <div class="controls">
+      <button onclick="prevPage()"><i class="fas fa-chevron-left"></i></button>
+      <button onclick="nextPage()"><i class="fas fa-chevron-right"></i></button>
+    </div>
+
+  </div>
+
+  <button id="closeDiary">×</button>
+</div>
+
+
+  <div id="bookingModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Book a Table</h2>
+      <form>
+        <input type="text" placeholder="Name" required>
+        <input type="email" placeholder="Email" required>
+        <input type="tel" placeholder="Phone" required>
+        <input type="date" required>
+        <input type="time" required>
+        <button type="submit">Reserve</button>
+      </form>
+    </div>
+  </div>
+
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1>Luxury Dining Experience</h1>
+      <p>Authentic Flavors • Elegant Ambience • Unforgettable Moments</p>
+      <a class="btn" onclick="openBooking()">Reserve Table</a>
+    </div>
+  </section>
+
+  <!-- What We Serve -->
+  <section id="serve" class="section" data-aos="fade-up">
+    <h2>What We Serve</h2>
+    <p>Indulge in a culinary journey across cuisines, crafted with passion and the finest ingredients.</p>
+    <div class="serve-grid">
+      <div class="serve-card">
+        <i class="fas fa-utensils"></i>
+        <h3>North Indian</h3>
+        <p>Rich flavors of buttery curries, naans, and aromatic spices.</p>
+      </div>
+      <div class="serve-card">
+        <i class="fas fa-leaf"></i>
+        <h3>South Indian</h3>
+        <p>Light and tangy dishes like dosas, idlis, and sambhar.</p>
+      </div>
+      <div class="serve-card">
+        <i class="fas fa-pizza-slice"></i>
+        <h3>Italian</h3>
+        <p>Authentic pizzas, pastas, and lasagnas with Italian flair.</p>
+      </div>
+      <div class="serve-card">
+        <i class="fas fa-dragon"></i>
+        <h3>Chinese</h3>
+        <p>Stir-fried noodles, dumplings, and spicy Manchurian delights.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Best Sellers -->
+  <section id="bestsellers" class="section gray" data-aos="fade-up">
+    <h2>Our Best Selling Dish</h2>
+    <p>Customer favorites that keep them coming back for more.</p>
+    <div class="best-sellers">
+      <div class="card">
+        <img src="https://www.teaforturmeric.com/wp-content/uploads/2017/11/tandoori-chicken-pizza-4442.jpg" alt="Tandoori Chicken Pizza" loading="lazy">
+        <div class="card-content">
+          <h4>Tandoori Chicken Pizza</h4>
+          <p>A fusion delight with spicy tandoori chicken, cheese, and veggies on a crispy base.</p>
+          <span class="price">₹320</span>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://t3.ftcdn.net/jpg/06/01/41/66/360_F_601416673_Tn9dqtXuujNiavuJnNNspgcDezsStYpD.jpg" alt="Butter Chicken" loading="lazy">
+        <div class="card-content">
+          <h4>Butter Chicken</h4>
+          <p>Rich, creamy, and cooked to perfection with tender chicken.</p>
+          <span class="price">₹250</span>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://t4.ftcdn.net/jpg/09/83/57/01/360_F_983570166_1SQBbVXE7MKiglTMq1XTM0WYtj47ykCC.jpg" alt="Hakka Noodles" loading="lazy">
+        <div class="card-content">
+          <h4>Hakka Noodles</h4>
+          <p>Classic Indo-Chinese favorite with stir-fried veggies and spices.</p>
+          <span class="price">₹180</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery" class="section" data-aos="fade-up">
+    <h2>Gallery</h2>
+    <p>A glimpse into our exquisite dishes and elegant ambiance.</p>
+    <div class="gallery-grid">
+      <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4" alt="Restaurant Interior" loading="lazy">
+      <img src="https://www.teaforturmeric.com/wp-content/uploads/2017/11/tandoori-chicken-pizza-4442.jpg" alt="Tandoori Pizza" loading="lazy">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRh4a17feQMjdvfKXqS-WJBSh-bhH8DYqDzaQ&s" alt="Butter Chicken" loading="lazy">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREqCjXdXZ-SueMFIrwFU2Ot-sikT_rfzp-jA&s" alt="Hakka Noodles" loading="lazy">
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials" class="section gray" data-aos="fade-up">
+    <h2>What Our Guests Say</h2>
+    <div class="testimonials">
+      <div class="testimonial">
+        <p>"An unforgettable dining experience! The flavors are authentic and the service impeccable."</p>
+        <cite>- Priya Sharma</cite>
+      </div>
+      <div class="testimonial">
+        <p>"The best fusion cuisine in town. Highly recommend the Tandoori Pizza!"</p>
+        <cite>- Rahul Verma</cite>
+      </div>
+    </div>
+  </section>
+
+  
+  <div id="footer"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="script.js"></script>
+  <script src="common.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

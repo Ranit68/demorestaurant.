@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Menu | Royal Spice</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="navbar.css">
+  <link rel="stylesheet" href="footer.css">
+  <link rel="stylesheet" href="menu.css">
+</head>
+
+<body>
+
+  <div id="navbar"></div>
+
+  <div class="menu-wrapper">
+    <aside class="sidebar">
+      <h3>Dishes Category</h3>
+      <div id="categoryList"></div>
+    </aside>
+
+    <main class="main">
+      <div class="search-bar">
+        <h3>Our Menu</h3>
+        <input type="text" id="searchInput" placeholder="Search dishes...">
+      </div>
+      <div class="menu-grid" id="menuGrid"></div>
+    </main>
+  </div>
+
+  <div id="footer"></div>
+
+  <!-- IMPORTANT ORDER -->
+  <script src="common.js"></script>
+  <script defer src="menu.js"></script>
+
+</body>
+
+</html>

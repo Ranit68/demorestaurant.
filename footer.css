@@ -1,0 +1,65 @@
+.main-footer {
+  background: #333;
+  color: #fff;
+  padding: 3rem 2rem 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  text-align: center;
+}
+
+.footer-brand h3 {
+  color: #d32f2f;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-brand p {
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+.footer-contact p {
+  margin: 0.4rem 0;
+  font-size: 0.9rem;
+  color: #ddd;
+}
+
+.footer-contact i {
+  margin-right: 6px;
+  color: #d32f2f;
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+.footer-social a {
+  color: #fff;
+  font-size: 1.4rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-social a:hover {
+  color: #d32f2f;
+  transform: translateY(-3px);
+}
+
+.footer-bottom {
+  grid-column: 1 / -1;
+  margin-top: 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 1rem;
+  font-size: 0.85rem;
+  color: #bbb;
+}
+
+@media (max-width: 600px) {
+  .main-footer {
+    padding: 2rem 1rem;
+  }
+}

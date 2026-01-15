@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Events & Party Booking | Royal Spice</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="events.css">
+    <link rel="stylesheet" href="navbar.css">
+  <link rel="stylesheet" href="footer.css">
+</head>
+<body>
+      <div id="navbar"></div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Celebrate Your Special Moments With Us</h1>
+    <p>Birthdays • Anniversaries • Corporate Events • Parties</p>
+    <a href="#booking" class="btn">Book Your Event</a>
+  </div>
+</section>
+
+<!-- EVENT TYPES -->
+<section class="section">
+  <h2>Events We Host</h2>
+  <div class="event-types">
+    <div class="event-card">🎂 Birthday Party</div>
+    <div class="event-card">💍 Anniversary</div>
+    <div class="event-card">🏢 Corporate Meeting</div>
+    <div class="event-card">🥳 Kitty Party</div>
+    <div class="event-card">🎓 Farewell Party</div>
+    <div class="event-card">👰 Small Wedding</div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="section light">
+  <h2>Why Choose Royal Spice</h2>
+  <div class="features">
+    <div>✔ Spacious Party Hall</div>
+    <div>✔ Customizable Menu</div>
+    <div>✔ Decoration Support</div>
+    <div>✔ Music & Sound System</div>
+    <div>✔ Parking Facility</div>
+    <div>✔ Professional Staff</div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="section">
+  <h2>Event Gallery</h2>
+  <div class="gallery">
+    <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1">
+    <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622">
+    <img src="https://images.unsplash.com/photo-1521337581100-8ca9a73a5f79">
+  </div>
+</section>
+
+<!-- PACKAGES -->
+<section class="section light">
+  <h2>Event Packages</h2>
+  <div class="packages">
+    <div class="package">
+      <h3>Silver</h3>
+      <p>₹699 / person</p>
+      <span>Basic Menu • Decoration</span>
+    </div>
+    <div class="package popular">
+      <h3>Gold</h3>
+      <p>₹999 / person</p>
+      <span>Premium Menu • Music • Decoration</span>
+    </div>
+    <div class="package">
+      <h3>Custom</h3>
+      <p>As per requirement</p>
+      <span>Fully Customizable</span>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING FORM -->
+<section class="section" id="booking">
+  <h2>Book Your Event</h2>
+
+  <form id="eventForm">
+    <input type="text" id="name" placeholder="Your Name" required>
+    <input type="tel" id="phone" placeholder="Phone Number" required>
+
+    <select id="eventType" required>
+      <option value="">Select Event Type</option>
+      <option>Birthday Party</option>
+      <option>Anniversary</option>
+      <option>Corporate Event</option>
+      <option>Kitty Party</option>
+      <option>Farewell</option>
+      <option>Wedding</option>
+    </select>
+
+    <input type="date" id="date" required>
+    <input type="number" id="guests" placeholder="Number of Guests" required>
+
+    <textarea id="message" placeholder="Special Requirements"></textarea>
+
+    <button type="submit" class="btn">Send Booking Request</button>
+  </form>
+</section>
+
+<!-- CTA STRIP -->
+<section class="cta">
+  <h2>Limited Dates Available!</h2>
+  <a href="tel:+919999999999" class="btn">Call Now</a>
+  <a href="https://wa.me/919999999999" class="btn outline">WhatsApp Us</a>
+</section>
+
+ <div id="footer"></div>
+  <script src="common.js"></script>
+
+<script src="events.js"></script>
+</body>
+</html>
